@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 <head>
   <script type="text/javascript">
     apiUrl = "<%= "//#{request.host_with_port}" %>";
@@ -12,24 +13,28 @@
   <link rel="icon" type="image/png" href="/img/favicon.ico"/>
 
 </head>
+
 <body ng-cloak>
-<!-- TODO: google analytics -->
+  <%= render partial: 'shared/ganalytics', locals: ganalytics_config if has_ganalytics? %>
 
-<!-- TODO: make navbar-widget a tag -->
-<header navbar-widget></header>
+  <!-- TODO: google analytics -->
 
-<div class="container-fluid" >
-  <div id="view" ui-view></div>
-</div>
-<!--/.container-fluid -->
+  <!-- TODO: make navbar-widget a tag -->
+  <header navbar-widget></header>
 
-<div id="footer">
-  <div class="container-fluid">
-    <!-- TODO: site configuration for author -->
-    <p class="text-muted text-center">&copy; <%= Date.today.year %> David Conner</p>
+  <div class="container-fluid" >
+    <div id="view" ui-view></div>
   </div>
-</div>
+  <!--/.container-fluid -->
 
-<%= javascript_include_tag "lineman/app" %>
+  <div id="footer">
+    <div class="container-fluid">
+      <!-- TODO: site configuration for author -->
+      <p class="text-muted text-center">&copy; <%= Date.today.year %> David Conner</p>
+    </div>
+  </div>
+
+  <%= javascript_include_tag "lineman/app" %>
 </body>
+
 </html>

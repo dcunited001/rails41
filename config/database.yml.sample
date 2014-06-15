@@ -11,6 +11,10 @@ test:
   <<: *default
   database: rails41_test
 
+integration:
+  <<: *default
+  database: rails41_integration
+
 staging:
   <<: *default
   database: rails41_staging

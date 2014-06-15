@@ -15,5 +15,8 @@
 /log/*.log
 /tmp
 
+.env.dev
+Procfile.dev
+
 config/secrets.yml
 config/database.yml

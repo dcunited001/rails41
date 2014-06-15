@@ -1,0 +1,7 @@
+#mongo: mongod
+#rack: rackup
+pg: postgres -D /usr/local/var/postgres
+redis: redis-server
+#rails: bin/rails s
+#workers: bin/resque work
+

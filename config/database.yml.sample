@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rails41_development
+
+test:
+  <<: *default
+  database: rails41_test
+
+production:
+  <<: *default
+  database: rails41_production
+  username: rails41
+  password: <%= ENV['RAILS41_DATABASE_PASSWORD'] %>

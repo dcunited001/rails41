@@ -26,5 +26,18 @@ module Rails41
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.to_prepare do
+      DeviseController.respond_to :json
+    end
+
+    # for minitest-rails generators
+    config.generators do |g|
+      g.test_framework :mini_test, spec: true, fixture: false
+    end
+
+    # lineman config (set LINEMAN_PROJECT_LOCATION in config/secrets.yml)
+    config.rails_lineman.lineman_assets = [:fonts, :css, :js]
+
   end
 end

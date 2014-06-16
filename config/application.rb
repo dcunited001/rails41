@@ -36,8 +36,9 @@ module Rails41
       g.test_framework :mini_test, spec: true, fixture: false
     end
 
-    # lineman config (set LINEMAN_PROJECT_LOCATION in config/secrets.yml)
+    # rails-lineman
+    config.rails_lineman.lineman_project_location = Rails.application.secrets.lineman_project_location || ENV['LINEMAN_PROJECT_LOCATION']
     config.rails_lineman.lineman_assets = [:fonts, :css, :js]
-
+    config.lineman_root = "#{Rails.application.secrets.ng_protocol}://#{Rails.application.secrets.ng_hostname}:#{Rails.application.secrets.ng_port}"
   end
 end

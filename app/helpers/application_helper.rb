@@ -11,7 +11,7 @@ module ApplicationHelper
     if Rails.env == "test"
       "#{Rails.application.config.lineman_root}/stylesheets/lineman/app.css"
     else
-      "lineman/app"
+      "/stylesheets/lineman/app"
     end
   end
 
@@ -19,7 +19,7 @@ module ApplicationHelper
     if Rails.env == "test"
       "#{Rails.application.config.lineman_root}/javascripts/lineman/app.js"
     else
-      "lineman/app"
+      "/javascripts/lineman/app"
     end
   end
 end

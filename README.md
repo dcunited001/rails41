@@ -18,3 +18,13 @@ in [Appistack](https://github.com/dcunited001/appistack).
 ### Running Integration Tests
 
 1. `rake spec`
+
+### Problems
+
+Rails-Lineman is not configuring the assets to be served correctly.
+- webfonts works, but not js/css
+- have to configure the helper methods to point to the files on lineman instead
+- tried changing `config.assets.debug` and `config.serve_static_assets`
+- seemed to work until i compiled the assets, but now it doesn't work even when i remove them
+- need to dig into the rails-lineman code.  maybe it doesn't work 100% with Rails 4.1
+- rails just doesn't realize that it should be serving these assets, the path goes to the wrong route.

@@ -15,6 +15,9 @@ gem 'resque_mailer', '~> 2.2.6'
 gem 'devise-async', '~>  0.9.0'
 
 gem 'rails-lineman'
+gem 'rack-cors', '~> 0.2.9' #, require: 'rack/cors'
+#gem 'heroku_secrets'
+#gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'pry', '~> 0.9'

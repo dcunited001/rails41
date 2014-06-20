@@ -29,7 +29,7 @@ class ApplicationTest < ActionDispatch::IntegrationTest
       # TODO: assert confirmation email queued
       # TODO: clicking confirmation link activates user
 
-      within '.navbar' do
+      within 'nav.navbar' do
         click_button "Log In"
       end
 
@@ -39,7 +39,11 @@ class ApplicationTest < ActionDispatch::IntegrationTest
         click_button "Log In"
       end
 
-      # TODO: assertions
+      within 'nav.navbar' do
+        within '#user-profile-widget' do
+          page.text.must_include email
+        end
+      end
     end
   end
 end

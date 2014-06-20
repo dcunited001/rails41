@@ -8,9 +8,13 @@ require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 
+# TODO: set up ENV['capybara_driver'] :poltergeist
+web_driver = :webkit
+js_driver = :webkit
+
 Capybara.configure do |c|
-  c.default_driver = :poltergeist
-  c.javascript_driver = :poltergeist
+  c.default_driver = web_driver
+  c.javascript_driver = web_driver
 end
 
 DatabaseCleaner.strategy = :truncation
@@ -33,7 +37,8 @@ module ActionDispatch
     end
 
     def set_page_size_to_13inch_macbook_air
-      page.driver.resize 1440, 900
+      # TODO: fix resize method for capybara_webkit
+      # page.driver.resize 1440, 900
     end
 
     def save_and_open_page

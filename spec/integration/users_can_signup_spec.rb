@@ -12,8 +12,6 @@ class ApplicationTest < ActionDispatch::IntegrationTest
 
     it 'using the modal forms' do
 
-      binding.pry
-
       within 'nav.navbar' do
         click_button "Sign Up"
       end

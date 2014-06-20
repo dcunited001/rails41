@@ -26,6 +26,7 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-metadata', '~> 0.5.3'
   gem 'poltergeist', '~> 1.4.1'
+  gem 'capybara-webkit', '~> 1.1.1'
   gem 'database_cleaner', '~> 1.2.0'
 
   # it'd be cool if i could use my websocket minitest reporter!

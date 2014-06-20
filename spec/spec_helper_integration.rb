@@ -8,13 +8,12 @@ require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 
-# TODO: set up ENV['capybara_driver'] :poltergeist
-web_driver = :webkit
-js_driver = :webkit
+webdriver = Rails.application.secrets.capybara_webdriver.to_sym
+jsdriver = Rails.application.secrets.capybara_jsdriver.to_sym
 
 Capybara.configure do |c|
-  c.default_driver = web_driver
-  c.javascript_driver = web_driver
+  c.default_driver = webdriver
+  c.javascript_driver = jsdriver
 end
 
 DatabaseCleaner.strategy = :truncation
@@ -38,19 +37,8 @@ module ActionDispatch
 
     def set_page_size_to_13inch_macbook_air
       # TODO: fix resize method for capybara_webkit
-      # page.driver.resize 1440, 900
+      page.driver.resize 1440, 900 unless Capybara.current_driver == :webkit
     end
-
-    def save_and_open_page
-      dir = "#{Rails.root}/tmp/cache/capybara"
-      file = "#{dir}/#{Time.now.strftime('%Y-%m-%d-%H-%M-%S')}.png"
-      FileUtils.mkdir_p dir
-      page.driver.render file
-      while !File.exists?(file)
-      end
-      system "open #{file}"
-    end
-    alias_method :page!, :save_and_open_page
 
     def execjs(string)
       page.evaluate_script(string)

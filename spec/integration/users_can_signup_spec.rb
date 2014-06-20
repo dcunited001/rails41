@@ -16,6 +16,8 @@ class ApplicationTest < ActionDispatch::IntegrationTest
         click_button "Sign Up"
       end
 
+      # TODO: assert modal open
+
       within 'form#signup-modal' do
         fill_in "Email", with: email
         fill_in "Username", with: username
@@ -25,6 +27,8 @@ class ApplicationTest < ActionDispatch::IntegrationTest
       end
 
       # TODO: assert modal closed
+
+      # TODO: assert flash[:notice] for successful user creation
       # TODO: add database cleaner to fix validation issue
       # TODO: assert confirmation email queued
       # TODO: clicking confirmation link activates user
@@ -40,9 +44,7 @@ class ApplicationTest < ActionDispatch::IntegrationTest
       end
 
       within 'nav.navbar' do
-        within '#user-profile-widget' do
-          page.text.must_include email
-        end
+        find('#user-profile-widget').text.must_include email
       end
     end
   end

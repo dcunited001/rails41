@@ -1,7 +1,11 @@
-## Rails41
+# Rails41 - A Containerized Rails API Template
 
 A simple Rails 4.1 API, integrated with the [lineman-angular-ui-bootstrap](https://github.com/dcunited001/lineman-angular-ui-bootstrap) client 
 in [Appistack](https://github.com/dcunited001/appistack).
+
+## TODO
+- fix integration tests (AngularJS not working properly with Poltergeist)
+- configure/launch on heroku & test updates to project on Nitrous.IO
 
 ### Getting Started
 

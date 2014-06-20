@@ -15,7 +15,7 @@ gem 'resque_mailer', '~> 2.2.6'
 gem 'devise-async', '~>  0.9.0'
 
 gem 'rails-lineman'
-gem 'rack-cors', '~> 0.2.9' #, require: 'rack/cors'
+gem 'rack-cors', '~> 0.2.9' #, require: 'rack/cors' # TODO: require necessary for heroku?
 #gem 'heroku_secrets'
 #gem 'rails_12factor', group: :production
 
@@ -31,6 +31,7 @@ group :test do
   gem 'poltergeist', '~> 1.4.1'
   gem 'capybara-webkit', '~> 1.1.1'
   gem 'database_cleaner', '~> 1.2.0'
+  gem 'launchy', '~> 2.4.2'
 
   # it'd be cool if i could use my websocket minitest reporter!
   # gem 'minitest-reporters', '~> 1.0.0.beta3'

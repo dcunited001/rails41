@@ -4,8 +4,15 @@ A simple Rails 4.1 API, integrated with the [lineman-angular-ui-bootstrap](https
 in [Appistack](https://github.com/dcunited001/appistack).
 
 ## TODO
-- fix integration tests (AngularJS not working properly with Poltergeist)
-- configure/launch on heroku & test updates to project on Nitrous.IO
+- TODO: fix integration tests (AngularJS not working properly with Poltergeist)
+- TODO: configure/launch on heroku & test updates to project on Nitrous.IO
+- TODO: set up token based auth for devise
+  - update devise controller to pass token data back to client
+  - add api tests for auth controllers & other controllers so far
+
+## References:
+- Jose Valim - [Token-based auth for Devise](https://gist.github.com/josevalim/fb706b1e933ef01e4fb6)
+- Devise - [Token-based auth](https://github.com/plataformatec/devise/wiki/How-To:-Simple-Token-Authentication-Example)
 
 ### Getting Started
 

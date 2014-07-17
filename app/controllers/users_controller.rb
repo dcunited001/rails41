@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  #before_filter :authenticate_user!
+class UsersController < BaseController
   respond_to :json
 
   def index

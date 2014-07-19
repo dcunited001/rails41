@@ -1,7 +1,7 @@
 # TODO: user controller specs
 
 describe UsersController do
-  context 'As a user' do
+  describe 'As a user' do
     describe '#index' do
 
     end
@@ -15,7 +15,7 @@ describe UsersController do
     end
   end
 
-  context 'As a guest' do
+  describe 'As a guest' do
 
   end
 end

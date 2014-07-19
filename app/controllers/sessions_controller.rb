@@ -27,7 +27,7 @@ class SessionsController < Devise::SessionsController
   end
 
   def show_current_user
-    warden.authenticate!(scope: resource_name, racall: "#{controller_path}#failure")
+    warden.authenticate!(scope: resource_name, recall: "#{controller_path}#failure")
     render(status: 200,
            json: {
              success: true,

@@ -1,4 +1,7 @@
-ENV["RAILS_ENV"] ||= "test"
+# TODO: fix for zeus (doesn't work with unless Module.const_defined?)
+# -- see my gist for solution https://gist.github.com/dcunited001/5121926
+
+ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'minitest/pride'
 

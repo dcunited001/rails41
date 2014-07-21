@@ -1,7 +1,3 @@
-# TODO: set up integration environment
-#   - problems with ActionDispatch::IntegrationTest
-#   - before filter undefined
-#   - it looks like gems are not being loaded properly for integration
 ENV["RAILS_ENV"] ||= "test"
 
 require 'spec_helper'

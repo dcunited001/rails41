@@ -1,5 +1,19 @@
 require 'zeus/rails'
 
+# Not using zeus for tests until the following items can be resolved
+
+# TODO: fix problem where specs run twice
+# - see https://github.com/burke/zeus/issues/269
+# - this bug should be fixed by zeus v15.1
+# TODO: Zeus is not compatible with MiniTest 5
+# - see this issue - https://github.com/qrush/m/issues/35
+# - this is because Zeus refers to MiniTest::Unit::TestCase.test_suites
+#   - instead of MiniTest::Runnable
+# - one option is to monkeypatch Zeus::M to either:
+#   - use the right method
+#   - or replace the suites method
+#   - submit patch to zeus?
+
 class AppistackPlan < Zeus::Rails
 
   def test_environment
@@ -20,7 +34,6 @@ class AppistackPlan < Zeus::Rails
   end
 
   def test(argv=ARGV)
-    MiniTest::Unit::TestCase.test_suites
     Zeus::M.run(argv)
   end
 

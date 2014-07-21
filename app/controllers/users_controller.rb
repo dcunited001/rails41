@@ -9,9 +9,8 @@ class UsersController < BaseController
     respond_with User.find(params[:id])
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def update; end
+  def destroy; end
 
   private
 

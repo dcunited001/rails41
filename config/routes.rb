@@ -3,7 +3,7 @@ require 'resque/server'
 Rails.application.routes.draw do
 
   # TODO: secure resque/server
-  mount Resque::Server.new, :at => "/resque"
+  mount Resque::Server.new, :at => '/resque'
 
   scope :api, constraints: { format: :json } do
     scope :v1 do

@@ -46,11 +46,22 @@ describe SessionsController do
       it 'returns 200' do
         post :destroy
         response.status.must_equal 200
+        json = JSON.parse(response.body)
+        json['info'].must_equal 'Logged Out'
       end
     end
 
     describe '#failure' do; end
-    describe '#show_current_user' do; end
+    describe '#show_current_user' do
+      it 'returns 200 & the user JSON' do
+        # TODO: decide whether this should also return the auth token or whether that should be reserved for sessions#create
+        get :show_current_user
+        response.status.must_equal 200
+        json = JSON.parse(response.body)
+        json['info'].must_equal 'Current User'
+        json['user']['email'].must_equal user.email
+      end
+    end
   end
 
   describe 'When the user is not logged in' do
@@ -66,6 +77,9 @@ describe SessionsController do
         it 'returns 200, the user JSON, & an auth token with valid creds' do
           post :create, { user: { email: user.email, password: password } }
           response.status.must_equal 200
+          json = JSON.parse(response.body)
+          json['info'].must_equal 'Logged In'
+          json['user']['email'].must_equal user.email
         end
       end
 
@@ -86,6 +100,12 @@ describe SessionsController do
     end
 
     describe '#failure' do; end
-    describe '#show_current_user' do; end
+
+    describe '#show_current_user' do
+      it 'returns 401' do
+        get :show_current_user
+        response.status.must_equal 401
+      end
+    end
   end
 end

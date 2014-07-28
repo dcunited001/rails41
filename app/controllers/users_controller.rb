@@ -10,7 +10,6 @@ class UsersController < BaseController
   end
 
   def update; end
-  def destroy; end
 
   private
 

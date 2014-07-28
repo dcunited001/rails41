@@ -17,8 +17,8 @@ describe SessionsController do
     describe '#create' do
       describe 'With invalid creds' do
         it 'logs the user out and then returns 401' do
-          # TODO: update controller to return 401 - for now redirects to ENV['HTTP_HOST']
-          post :create, { email: user.email, password: 'invalid' }
+          # TODO: update controller to return 401? - for now it 301 redirects to ENV['HTTP_HOST']
+          post :create, { user: { email: user.email, password: 'invalid' } }
           response.status.must_equal 302
           # TODO: assert the user has been logged out!
         end
@@ -26,13 +26,18 @@ describe SessionsController do
 
       describe 'With valid email/password' do
         it 'returns 200, the user JSON, & an auth token with valid creds' do
-
+          # TODO: update controller to return 200? - for now it 301 redirects to ENV['HTTP_HOST']
+          post :create, { user: { email: user.email, password: password } }
+          response.status.must_equal 302
         end
       end
 
       describe 'With valid username/password' do
         it 'returns 200, the user JSON, & an auth token with valid creds' do
-
+          skip 'implement authentication by username'
+          # TODO: update controller to return 200? - for now it 301 redirects to ENV['HTTP_HOST']
+          post :create, { user: { email: user.username, password: password } }
+          response.status.must_equal 302
         end
       end
     end
@@ -52,21 +57,22 @@ describe SessionsController do
     describe '#create' do
       describe 'With invalid creds' do
         it 'returns 401' do
-          post :create, { email: user.email, password: 'invalid' }
+          post :create, { user: { email: user.email, password: 'invalid' } }
           response.status.must_equal 401
         end
       end
 
       describe 'With valid email/password' do
         it 'returns 200, the user JSON, & an auth token with valid creds' do
-          post :create, { email: user.email, password: password }
+          post :create, { user: { email: user.email, password: password } }
           response.status.must_equal 200
         end
       end
 
       describe 'With valid username/password' do
         it 'returns 200, the user JSON, & an auth token with valid creds' do
-          post :create, { email: user.email, password: password }
+          skip 'implement authentication by username'
+          post :create, { user: { email: user.username, password: password } }
           response.status.must_equal 200
         end
       end

@@ -80,6 +80,9 @@ describe SessionsController do
           json = JSON.parse(response.body)
           json['info'].must_equal 'Logged In'
           json['user']['email'].must_equal user.email
+
+          updated_user = User.find_by_email(user.email)
+          json['user']['authentication_token'].must_equal(updated_user.authentication_token)
         end
       end
 
@@ -88,6 +91,9 @@ describe SessionsController do
           skip 'implement authentication by username'
           post :create, { user: { email: user.username, password: password } }
           response.status.must_equal 200
+
+          updated_user = User.find_by_email(user.email)
+          json['user']['authentication_token'].must_equal(updated_user.authentication_token)
         end
       end
     end

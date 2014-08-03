@@ -3,11 +3,12 @@ class SessionsController < Devise::SessionsController
 
   def create
     resource = warden.authenticate!(scope: resource_name, recall: "#{controller_path}#failure")
+    user_json = current_user.as_json.merge("authentication_token" => current_user.authentication_token)
     render(status: 200,
            json: { 
              success: true,
              info: "Logged In",
-             user: current_user })
+             user: user_json})
   end
   
   def destroy

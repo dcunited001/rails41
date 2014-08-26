@@ -3,11 +3,11 @@ class SessionsController < Devise::SessionsController
 
   def create
     resource = warden.authenticate!(scope: resource_name, recall: "#{controller_path}#failure")
-    user_json = current_user.as_json.merge("authentication_token" => current_user.authentication_token)
+    user_json = current_user.as_json.merge('authentication_token' => current_user.authentication_token)
     render(status: 200,
            json: { 
              success: true,
-             info: "Logged In",
+             info: 'Logged In',
              user: user_json})
   end
   
@@ -17,14 +17,14 @@ class SessionsController < Devise::SessionsController
     render(status: 200,
            json: {
              success: true,
-             info: "Logged Out" })
+             info: 'Logged Out'})
   end
 
   def failure
     render(status: 401,
            json: { 
              success: false,
-             info: "Login Credentials Failed" })
+             info: 'Login Credentials Failed'})
   end
 
   def show_current_user
@@ -32,7 +32,7 @@ class SessionsController < Devise::SessionsController
     render(status: 200,
            json: {
              success: true,
-             info: "Current User",
+             info: 'Current User',
              user: current_user })
   end
 

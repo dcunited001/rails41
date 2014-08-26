@@ -13,6 +13,18 @@ in [Appistack](https://github.com/dcunited001/appistack).
 ## References:
 - Jose Valim - [Token-based auth for Devise](https://gist.github.com/josevalim/fb706b1e933ef01e4fb6)
 - Devise - [Token-based auth](https://github.com/plataformatec/devise/wiki/How-To:-Simple-Token-Authentication-Example)
+- Grape on Rails - [Using Devise Tokens](http://funonrails.com/2014/03/api-authentication-using-devise-token/)
+
+ https://github.com/dblock/grape-on-rails
+ https://github.com/doorkeeper-gem/doorkeeper
+ https://github.com/intridea/grape/wiki/Grape-and-Rails-Path-Helpers
+ http://bitboxer.de/2014/02/09/grape/
+ http://funonrails.com/2014/03/building-restful-api-using-grape-in-rails/
+ http://mikecoutermarsh.com/organize-your-grape-api-in-rails/
+ http://funonrails.com/2014/03/api-authentication-using-devise-token/
+ http://funonrails.com/2014/03/building-restful-api-using-grape-in-rails/
+ https://github.com/gonzalo-bulnes/simple_token_authentication
+ https://github.com/plataformatec/devise/wiki/How-To:-Stub-authentication-in-controller-specs
 
 ### Getting Started
 

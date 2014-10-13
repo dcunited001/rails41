@@ -4,13 +4,16 @@ A simple Rails 4.1 API, integrated with the [lineman-angular-ui-bootstrap](https
 in [Appistack](https://github.com/dcunited001/appistack).
 
 ## TODO
-- TODO: fix integration tests (AngularJS not working properly with Poltergeist)
-- TODO: configure/launch on heroku & test updates to project on Nitrous.IO
+- TODO: configure/launch on heroku
 - TODO: set up token based auth for devise
   - update devise controller to pass token data back to client
   - add api tests for auth controllers & other controllers so far
 
 ## References:
+
+- [Containerize Rails App](http://blog.zedroot.org/containerize-your-rails-application/)
+- [Sinatra/Logstash/Elastic on CoreOS](http://marceldegraaf.net/2014/05/05/coreos-follow-up-sinatra-logstash-elasticsearch-kibana.html)
+
 - Jose Valim - [Token-based auth for Devise](https://gist.github.com/josevalim/fb706b1e933ef01e4fb6)
 - Devise - [Token-based auth](https://github.com/plataformatec/devise/wiki/How-To:-Simple-Token-Authentication-Example)
 - Grape on Rails - [Using Devise Tokens](http://funonrails.com/2014/03/api-authentication-using-devise-token/)
@@ -40,14 +43,6 @@ in [Appistack](https://github.com/dcunited001/appistack).
 
 ### Running Integration Tests
 
-1. `rake spec`
-
-### Problems
-
-Rails-Lineman is not configuring the assets to be served correctly.
-- webfonts works, but not js/css
-- have to configure the helper methods to point to the files on lineman instead
-- tried changing `config.assets.debug` and `config.serve_static_assets`
-- seemed to work until i compiled the assets, but now it doesn't work even when i remove them
-- need to dig into the rails-lineman code.  maybe it doesn't work 100% with Rails 4.1
-- rails just doesn't realize that it should be serving these assets, the path goes to the wrong route.
+N/A -- Integration tests are now assumed to run in the frontend framework 
+- bye bye capybara and ruby :( i really tried as hard as i could to keep all tests ruby
+- also, rails is no longer serving any html

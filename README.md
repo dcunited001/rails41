@@ -1,3 +1,19 @@
+# Screws It! I starts overs now!
+
+Too many specific changes to this project to undo.  Faster to just create a new Rails 4.2 API project!
+
+Changes I need to undo include:
+
+- asset precompile with rails-lineman gem.  i like lineman, but using gulp now.
+- integration testing configuration, which was rigged so i could continue using capybara.  using protractor now.
+- there will be no frontend.  this is api only.  i don't want to have to remove all this crufty code!
+- Rack CORS configuration
+- Simple Token Authentication gem needs to be changed to Devise Token Auth gem.
+- environment variable configuration on heroku.  ahhhh hero-kun, lulz.
+- and i'm sure theres way more than that
+
+Good thing I'm in the position to just start from scratch lol.
+
 # Rails41 - A Containerized Rails API Template
 
 A simple Rails 4.1 API, integrated with the [lineman-angular-ui-bootstrap](https://github.com/dcunited001/lineman-angular-ui-bootstrap) client 

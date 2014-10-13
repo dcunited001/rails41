@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails', '~> 4.1.1'
 gem 'devise', '~> 3.2.0'
-gem 'simple_token_authentication', '~> 1.5.0'
 gem 'pg', '~> 0.17.0'
 gem 'rake', '~> 10.3.2'
 gem 'jbuilder', '~> 2.0'

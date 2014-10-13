@@ -14,7 +14,6 @@ gem 'resque', '~> 1.25.1'
 gem 'resque_mailer', '~> 2.2.6'
 gem 'devise-async', '~>  0.9.0'
 
-gem 'rails-lineman'
 gem 'rack-cors', '~> 0.2.9' #, require: 'rack/cors' # TODO: require necessary for heroku?
 #gem 'heroku_secrets'
 #gem 'rails_12factor', group: :production

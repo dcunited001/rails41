@@ -8,8 +8,6 @@ cors_origins = ENV['RACK_CORS_ORIGINS'] || '*'
 require 'rack/cors'
 use Rack::Cors do
   # TODO: secure
-
-  # allow all origins in development
   allow do
     origins cors_origins
     resource '*',

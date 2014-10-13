@@ -9,14 +9,11 @@
   <!-- site configuration for title (in one place for both rails and angular) -->
   <title>ng-rails</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag lineman_app_css, media: :all %>
   <link rel="icon" type="image/png" href="/favicon.ico"/>
 
 </head>
 
 <body ng-cloak>
-  <%= render partial: 'shared/ganalytics', locals: ganalytics_config if has_ganalytics? %>
-
   <!-- TODO: google analytics -->
 
   <!-- TODO: make navbar-widget a tag -->
@@ -34,7 +31,6 @@
     </div>
   </div>
 
-  <%= javascript_include_tag lineman_app_js %>
 </body>
 
 </html>

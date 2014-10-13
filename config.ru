@@ -3,12 +3,7 @@
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
 
-cors_origins = case Rails.env
-                 when 'test'        then '*'
-                 when 'development' then '*'
-                 when 'staging'     then 'ng-rails-stack-client.herokuapp.com'
-                 when 'production'  then '*'
-               end
+cors_origins = ENV['RACK_CORS_ORIGINS'] || '*'
 
 require 'rack/cors'
 use Rack::Cors do
